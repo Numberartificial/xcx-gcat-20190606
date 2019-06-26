@@ -1,0 +1,15 @@
+<!--pages/careCat/index.wxml-->
+<view class='careCat_container bgColor'>
+  <Introduction 
+      title='为帮您找到靠谱的领养人，我们会：' 
+      data='{{careCatInfo}}'
+  ></Introduction>
+  <Wechat 
+      hasUserInfo='{{hasUserInfo}}' 
+      wechat_name='{{wechat_name}}' 
+      bindsubmit='submitWechat' 
+      binduserinfo='getUserInfo' 
+      isSubmit='{{isSubmit}}'
+  ></Wechat>
+
+</view>

@@ -1,0 +1,67 @@
+<!--pages/details/index.wxml-->
+<view class='detail_wrapper'>
+  <swiper autoplay indicator-dots indicator-color='rgba(255,255,255 .4)' indicator-active-color='#fff'>
+    <block wx:for="{{data.headUrl}}">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image" width="750" height="750"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <view class='detail_content'>
+    <view class='cat_info'>
+      <view class='row_1'>
+        <text class='nickname'>{{data.nickname}}</text>
+        <image class='sexImg' src='{{data.sex==1?"/images/boy.png":data.sex==2?"/images/gril.png":"/images/cat_icon.png"}}'></image>
+        <text class='sexName'>{{data.sex==1?'男孩':data.sex==2?'女孩':'未知'}}</text>
+        <text class='age'>{{data.age}}</text>
+      </view>
+      <view class='row'>
+        <image class='icon_img' src='/images/doctors.png'></image>
+        <text>{{data.vaccine_status}}</text>
+        <text>{{data.spay_status}}</text>
+        <text>{{data.declaw_status}}</text>
+      </view>
+      <view class='row'>
+        <image class='icon_img' src='/images/source.png'></image>
+        <text>{{data.hair}}</text>
+        <text>{{data.source}}</text>
+      </view>
+       <view class='row'>
+        <image class='icon_img' src='/images/address.png'></image>
+        <text>{{data.province}}</text>
+        <text>{{data.city}}</text>
+        <text>{{data.region}}</text>
+      </view>
+      <view class='row tag_row'>
+        <text class='tag' wx:for='{{data.tags}}' style="background:{{item.color}}">{{item.tag}}</text>
+      </view>
+    </view>
+    <view class='cat_story'>
+      <view class='cat_title nickname'>猫咪故事</view>
+      <view>{{data.story}}</view>
+    </view>
+    <view class='cat_story'>
+      <view class='cat_title nickname'>领养要求</view>
+      <view wx:for='{{data.requirements}}'>- {{item}}</view>
+    </view>
+  </view>
+
+  <!-- <button wx:if='{{!hasUserInfo}}' class='careBtn' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>申请领养</button> -->
+  <view class='careBtn' catchtap='showGoCareCat'>申请领养</view>
+  <view class='modalWrapper' wx:if='{{goCareCat}}'>
+      <view class='modalBox copyModal'>
+        <view class='modal_close'>
+           <image class='closeBtn' catchtap='hideGoCareCat' src='/images/icon_close.png'></image>
+         </view>
+       
+        <view class='modal_title'>请复制下方微信号添加工作人员领养：</view>
+        <view class='modal_content'>
+          <image src='/images/ic_share_wechat.png' class='wechat_img'></image>
+          <text class='wechat_num'>{{wechatName}}</text>
+        </view>
+        <button class='copy_btn' catchtap='copyWachat'>复制微信号</button>
+      </view>
+    </view>
+  
+</view>

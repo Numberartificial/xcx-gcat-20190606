@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "Introduction":"../component/Introduction/index",
+    "Wechat": "../component/Wechat/index"
+  },
+  "navigationBarTitleText": "找猫"
+}
