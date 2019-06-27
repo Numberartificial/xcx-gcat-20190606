@@ -41,12 +41,12 @@ Promise.prototype.finally = function(callback) {
  */
 
 function wxRequest(url, token, data, type, noLoading) {
-  // console.log('→start');
-  // console.log('→url：' + url);
-  // console.log('→token' + token);
-  // console.log('→data：' + JSON.stringify(data));
-  // console.log('→type：' + type);
-  // console.log('→loading' + noLoading)
+  console.log('→start');
+  console.log('→url：' + url);
+  console.log('→token' + token);
+  console.log('→data：' + JSON.stringify(data));
+  console.log('→type：' + type);
+  console.log('→loading' + noLoading)
   if (!noLoading) { //noLoading true:不显示加载中 
     wx.showToast({
       title: '加载中',

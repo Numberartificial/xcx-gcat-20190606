@@ -65,17 +65,14 @@ Page({
   //小程序授权 获取用户信息
   getUserInfo: function (e) {
     console.log(e, 'getUserInfo')
-    this.setData({
-      hasUserInfo: true
+    var self = this;
+    app.getUserInfoAll(e, res => {
+      self.setData({
+        hasUserInfo: res.hasUserInfo,
+        userInfo: res.userInfo
+      })
+      // self.submitWechat()
     })
-    // var self = this;
-    // app.getUserInfoAll(e, res => {
-    //   self.setData({
-    //     hasUserInfo: res.hasUserInfo,
-    //     userInfo: res.userInfo
-    //   })
-    //   // self.submitWechat()
-    // })
   },
 
   /**

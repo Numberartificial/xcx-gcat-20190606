@@ -1,3 +1,5 @@
 {
-  "usingComponents": {}
+  "usingComponents": {
+    "SwiperCom": "../component/SwiperCom/index"
+  }
 }

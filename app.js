@@ -36,23 +36,15 @@ App({
               app_id: API.APP_ID,
               code: res.code,
               encrypted_data: encryptedData,
-              iv: iv,
-              type: 20
+              iv: iv
             };
             console.log(params, 'get_unionId==params')
             get_unionId(params).then(res => {
               "use strict";
               console.log(res,'get_unionId_success')
-              if (res.code === 1200) {
+              if (res.errcode == 0 ) {
                 //存储unionid等
-                let unionId = res.data.union_id;
-                let bindData = {
-                  "union_id": res.data.union_id,
-                  "open_id": res.data.open_id,
-                  "nickname": res.data.nickname,
-                  "avatar_url": res.data.avatar_url
-                }
-                wx.setStorageSync('bindData', bindData)
+                let unionId = res.data.user_id;
                 wx.setStorageSync('union_id', unionId)
                 callback({
                   userInfo: userInfo,

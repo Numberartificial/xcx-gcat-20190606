@@ -15,15 +15,14 @@ const detailsData = {
   "source": '个人救助', //资源 个人救助
   "province": '上海市',
   "city": '静安区',
-  "region": 'string',
-  "tags": ['可爱', '啦啦', '呀呀呀', 'hehehe', '可爱', '啦啦', '呀呀呀', 'hehehe', '可爱', '啦啦', '呀呀呀', 'hehehe'],
+  "region": '',
+  "tags": ['可爱', '调皮', '无攻击性'],
   "story": '猫咪被压在小区的工地下面，费劲心机解救出来，只有 1 个多月大的样子，非常可爱很亲人呢。', //故事
   "requirements": ['不离不弃，有病就医', '工作稳定，有一定经济基础', '接受家访', '有防盗门、纱窗护网'], //要求
   "update_time": '2019-09-09T09:09:09',
-  headUrl: [
-    'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-    'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-    'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+  "photos": [
+    '/images/1.png',
+    '/images/2.png'
   ]
 }
 
@@ -33,7 +32,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    hasUserInfo: null,
     colorList: ['#76DAB9', '#F3A0A9', '#F3C192'],
     data: null,
     goCareCat: false,
@@ -70,7 +68,7 @@ Page({
       }
     })
 
-    console.log(this.data.detailsData, 'detailsData===')
+    console.log(this.data.data, 'detailsData===')
   },
   //申请领养
   showGoCareCat: function() {
@@ -116,36 +114,6 @@ Page({
       }
     })
   },
-
-  //小程序授权 获取用户信息
-  getUserInfo: function(e) {
-    var self = this;
-    app.getUserInfoAll(e, res => {
-      self.setData({
-        hasUserInfo: res.hasUserInfo,
-        userInfo: res.userInfo
-      })
-      // self.bindPost()
-      // self.get_topic_detail()
-    })
-  },
-
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-
-  },
-
-  
   /**
    * 用户点击右上角分享
    */

@@ -1,0 +1,4 @@
+/* pages/component/Swiper/index.wxss */
+.slide-image{
+  width: 100%;
+}

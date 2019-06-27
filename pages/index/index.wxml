@@ -1,16 +1,9 @@
 <!--index.wxml-->
 <view class="container">
-  <swiper autoplay indicator-dots indicator-color='rgba(255,255,255 .4)' indicator-active-color='#fff'>
-   <block wx:for="{{headerImgUrls}}">
-    <swiper-item>
-      <image src="{{item}}" class="slide-image" width="750" height="270"/>
-    </swiper-item>
-  </block>
-  </swiper>
-
+  <SwiperCom swiperImg='{{headerImgUrls}}' height="{{270}}"></SwiperCom>
   <view class='page_list'>
     <view class='list_item' wx:for='{{pageList}}' data-id='{{item.id}}' catchtap='goDetail'>
-     <image class='cat_img' src='{{item.img}}'></image>
+     <image class='cat_img' src='{{item.photos[0]}}'></image>
      <view class='list_item_right'>
       <view class='name'>{{item.name}}</view>
       <view class='sex'>

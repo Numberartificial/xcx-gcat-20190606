@@ -11,8 +11,8 @@ const API_PATH = API.API_PATH
  * @param params
  */
 const get_unionId = (params) => {
-  let url = `${API_PATH}/wechat/app/user_info`
-  return fetch(url, null, params, 'POST');
+  let url = `${API_PATH}/users`
+  return fetch(url, null, params, 'PUT');
 }
 /**
  * 获取宠物列表

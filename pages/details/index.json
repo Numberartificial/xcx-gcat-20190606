@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
+  "usingComponents": {
+    "SwiperCom": "../component/SwiperCom/index"
+  },
   "navigationBarTitleText": "猫咪详情"
 }

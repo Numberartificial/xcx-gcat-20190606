@@ -1,13 +1,6 @@
 <!--pages/details/index.wxml-->
 <view class='detail_wrapper'>
-  <swiper autoplay indicator-dots indicator-color='rgba(255,255,255 .4)' indicator-active-color='#fff'>
-    <block wx:for="{{data.headUrl}}">
-      <swiper-item>
-        <image src="{{item}}" class="slide-image" width="750" height="750"/>
-      </swiper-item>
-    </block>
-  </swiper>
-
+  <SwiperCom swiperImg='{{data.photos}}' height="750"></SwiperCom>
   <view class='detail_content'>
     <view class='cat_info'>
       <view class='row_1'>
@@ -46,9 +39,11 @@
       <view wx:for='{{data.requirements}}'>- {{item}}</view>
     </view>
   </view>
+  
+  <view class='cat_buttom'>
+    <view class='careBtn' catchtap='showGoCareCat'>申请领养</view>
+  </view>
 
-  <!-- <button wx:if='{{!hasUserInfo}}' class='careBtn' open-type='getUserInfo' bindgetuserinfo='getUserInfo'>申请领养</button> -->
-  <view class='careBtn' catchtap='showGoCareCat'>申请领养</view>
   <view class='modalWrapper' wx:if='{{goCareCat}}'>
       <view class='modalBox copyModal'>
         <view class='modal_close'>
