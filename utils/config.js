@@ -19,8 +19,8 @@ const get_unionId = (params) => {
  * @param params
  */
 const get_gcat_list = (params) => {
-  let url = `${API_PATH}/cats?status=&current_page=${params.current_page}&page_size=${params.page_size}`
-  return fetch(url, null, null, 'GET');
+  let url = `${API_PATH}/cats?status=${params.status}&current_page=${params.current_page}&page_size=${params.page_size}`
+  return fetch(url, null, null, 'GET')
   
 }
 /**
@@ -43,9 +43,21 @@ const submit_actions = (params) => {
   return fetch(url, null, params, 'POST');
 }
 
+/**
+ * 提交微信号
+ * @param params
+ * user_id:用户union_id
+ * wechat_id:用户微信号
+ */
+const submit_cats = (params) => {
+  const url = `${API_PATH}/cats`
+  return fetch(url, null, params, 'POST');
+}
+
 module.exports={
   get_unionId: get_unionId,
   get_gcat_list: get_gcat_list,
   get_details: get_details,
-  submit_actions: submit_actions
+  submit_actions: submit_actions,
+  submit_cats: submit_cats
 }

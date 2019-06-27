@@ -4,8 +4,10 @@
   <input class='wechat_ipt' placeholder='请输入微信号' value='{{wechat_value}}' bindinput='_changeInput'></input>
   <view>
     <button class='submitBtn' wx:if='{{!hasUserInfo}}' open-type='getUserInfo' bindgetuserinfo='_getUserInfo'>提 交</button>
-    <button wx:if='{{hasUserInfo&&isSubmit}}' class='submitBtn disabled'>提 交</button>
-    <button wx:if='{{hasUserInfo&&!isSubmit}}' class='submitBtn' catchtap='_submitWechatValue'>提 交</button>
+    <block wx:if='{{hasUserInfo}}'>
+      <button wx:if='{{isSubmit}}' class='submitBtn disabled'>提 交</button>
+      <button wx:if='{{!isSubmit}}' class='submitBtn' catchtap='_submitWechatValue'>提 交</button>
+    </block>
   </view>
   <view class='copy_view'>
     <view>您也可以复制下方微信号主动添加工作人员：</view>

@@ -6,7 +6,7 @@ Component({
   properties: {
     wechat_name: String,
     hasUserInfo:Boolean,
-    isSubmit:Boolean
+    isSubmit: Boolean
   },
 
   /**
@@ -19,6 +19,8 @@ Component({
 
   attached: function () { console.log('attached') 
     let union_id = wx.getStorageSync('union_id')
+    let isSubmitFind = wx.getStorageSync('isSubmitFind')
+    let isSubmitCare = wx.getStorageSync('isSubmitCare')
 
     if (union_id && union_id != 'null') {
       this.setData({
@@ -29,6 +31,9 @@ Component({
         hasUserInfo: false
       })
     }
+
+    
+
   },
   moved: function () { console.log('moved') },
   detached: function () { console.log('detached') },
@@ -40,7 +45,11 @@ Component({
     _getUserInfo(e) {
       //e->detail->detail
       //子传父方式
-      const myEventDetail = e.detail // detail对象，提供给事件监听函数
+      const myEventDetail = {
+        ...e.detail,
+        wechat_value: this.data.wechat_value
+
+      } // detail对象，提供给事件监听函数
       const myEventOption = {} // 触发事件的选项
       this.triggerEvent('userinfo', myEventDetail, myEventOption)
     },

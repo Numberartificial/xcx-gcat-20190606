@@ -20,6 +20,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    _goPage:function(e){
+      let url = e.currentTarget.dataset.url
+      if(url){
+        wx.switchTab({
+          url: e.currentTarget.dataset.url,
+        })
+      }
+    }
 
   }
 })

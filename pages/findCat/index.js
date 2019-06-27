@@ -20,54 +20,49 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log('onLoad')
+    // console.log('onLoad')
   
 
   },
 
   submitWechat:function(e){
+
     let params={
       user_id: wx.getStorageSync('union_id'),
       wechat_id: e.detail.wechat_value
     }
 
-    console.log(11, params, '请求接口')
+    // console.log(11, params, '请求接口')
 
-    this.setData({
-      isSubmit:true
+    submit_actions(params).then(res=>{
+      if (res.errcode==0){
+        wx.showToast({
+          title: '提交成功',
+        })
+        this.setData({
+          isSubmit: true
+        })
+        wx.setStorageSync('isSubmitFind', true)
+      }else{
+        wx.showToast({
+          title: '提交失败',
+          icon:'none'
+        })
+      }
+      
     })
-    // submit_actions(params).then(res=>{
-    //   if(res.data==200){
-    //     wx.showToast({
-    //       title: '提交成功',
-    //     })
-    // this.setData({
-    //   isSubmit: true
-    // })
-    //   }else{
-    //     wx.showToast({
-    //       title: '提交失败',
-    //       icon:'none'
-    //     })
-    //   }
-    // })
-
-
-
   },
   //小程序授权 获取用户信息
   getUserInfo: function (e) {
-    console.log(e,'find---getUserInfo')
-    // this.setData({
-    //   hasUserInfo:true
-    // })
     var self = this;
     app.getUserInfoAll(e, res => {
       self.setData({
         hasUserInfo: res.hasUserInfo,
         userInfo: res.userInfo
       })
-      // self.submitWechat()
+      if (e.detail.wechat_value && e.detail.wechat_value!=''){
+        self.submitWechat(e)
+      }
     })
   },
 
@@ -75,14 +70,19 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log('onReady')
+    // console.log('onReady')
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    console.log('onShow')
+    // console d.log('onShow==isSubmitFind')
+    if (wx.getStorageSync('isSubmitFind')){
+      this.setData({
+        isSubmit:true
+      })
+    }
   },
 
 

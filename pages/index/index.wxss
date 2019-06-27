@@ -21,7 +21,6 @@
   display: flex;
   flex-direction: column;
   margin-left: 28rpx;
-  height:168rpx;
   flex: auto;
 }
 
@@ -53,8 +52,8 @@
 
 .list_item_right .tags{
   display:flex;
-  padding-top:8rpx;
-  padding-bottom:14rpx;
+  align-items: center;
+  height: 40rpx;
 
 }
 .list_item_right .tag{

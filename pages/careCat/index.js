@@ -1,7 +1,7 @@
 // pages/careCat/index.js
 const app = getApp()
 const API = require('../../utils/api.js');
-import { submit_actions } from '../../utils/config.js'
+import { submit_cats } from '../../utils/config.js'
 
 Page({
 
@@ -33,7 +33,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (wx.getStorageSync('isSubmitCare')) {
+      this.setData({
+        isSubmit: true
+      })
+    }
   },
 
   submitWechat: function (e) {
@@ -42,36 +46,37 @@ Page({
       wechat_id: e.detail.wechat_value
     }
 
-    console.log(11, params, '请求接口')
-    this.setData({
-      isSubmit: true
+    // console.log(12, params, '请求接口')
+    
+    submit_cats(params).then(res=>{
+      if (res.errcode==0){
+        wx.showToast({
+          title: '提交成功',
+        })
+        this.setData({
+          isSubmit: true
+        })
+        wx.setStorageSync('isSubmitCare', true)
+      }else{
+        wx.showToast({
+          title: '提交失败',
+          icon:'none'
+        })
+      }
+      
     })
-    // submit_actions(params).then(res=>{
-    //   if(res.data==200){
-    //     wx.showToast({
-    //       title: '提交成功',
-    //     })
-    //   }else{
-    //     wx.showToast({
-    //       title: '提交失败',
-    //       icon:'none'
-    //     })
-    //   }
-    // })
-
-
-
   },
   //小程序授权 获取用户信息
   getUserInfo: function (e) {
-    console.log(e, 'getUserInfo')
     var self = this;
     app.getUserInfoAll(e, res => {
       self.setData({
         hasUserInfo: res.hasUserInfo,
         userInfo: res.userInfo
       })
-      // self.submitWechat()
+      if (e.detail.wechat_value && e.detail.wechat_value != '') {
+        self.submitWechat(e)
+      }
     })
   },
 

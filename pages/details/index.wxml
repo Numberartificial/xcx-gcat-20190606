@@ -42,7 +42,7 @@
         <view class='nickname'>领养要求</view>
         <view class='line'></view>
       </view>
-      <view wx:for='{{data.requirements}}' style='line-height:40rpx'>- {{item}}</view>
+      <view wx:for='{{data.adopt_requirements}}' style='line-height:40rpx'>- {{item}}</view>
     </view>
   </view>
   

@@ -30,7 +30,7 @@ App({
       //callback 必须在拿到unionid之后才返回
       wx.login({
         success: function (res) {
-          console.log(res, 'wx_login_success')
+          // console.log(res, 'wx_login_success')
           if (res.code) {
             let params = {
               app_id: API.APP_ID,
@@ -38,10 +38,10 @@ App({
               encrypted_data: encryptedData,
               iv: iv
             };
-            console.log(params, 'get_unionId==params')
+            // console.log(params, 'get_unionId==params')
             get_unionId(params).then(res => {
               "use strict";
-              console.log(res,'get_unionId_success')
+              // console.log(res,'get_unionId_success')
               if (res.errcode == 0 ) {
                 //存储unionid等
                 let unionId = res.data.user_id;
