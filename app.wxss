@@ -42,3 +42,7 @@ button::after {
   text-align: center;
 }
 
+.view_inline{
+  display: inline-block;
+}
+

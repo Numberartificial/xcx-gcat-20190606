@@ -18,29 +18,29 @@
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #333;
-  padding-bottom: 4rpx;
+  line-height:49rpx;
 }
 .row text {
   margin-left: 10rpx;
 }
 
 .row_1 {
-   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  flex-wrap: wrap;
   font-size: 26rpx;
   font-family: PingFangSC-Regular;
   font-weight: 400;
   color: #b6b6b6;
-  padding-bottom: 6rpx;
+  padding-bottom: 10rpx;
 }
 
 .cat_info {
   padding-bottom: 51rpx;
-  border-bottom: 1rpx solid #e9e9e9;
+  border-bottom: 1px solid #e9e9e9;
+  display: flex;
+  flex-direction: column;
 }
-
+.cat_info>view{
+  flex: auto;
+}
 .nickname {
   color: #282828;
   font-size: 36rpx;
@@ -52,7 +52,7 @@
 .sexImg {
   width: 20rpx;
   height: 20rpx;
-  vertical-align: middle;
+  /* vertical-align: middle; */
 }
 
 .sexName {
@@ -93,9 +93,19 @@
 }
 
 .cat_title {
-  display: inline-block;
-  border-bottom: 8rpx solid rgba(60, 203, 155, 0.4);
   margin-bottom: 20rpx;
+  position: relative;
+  height: 49rpx;
+  line-height: 49rpx;
+}
+
+.cat_title .line{
+  position: absolute;
+  left:4rpx;
+  top:38rpx;
+  height: 8rpx;
+  width:136rpx;
+  background: rgba(60, 203, 155, 0.4);
 }
 
 .copyModal{

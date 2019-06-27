@@ -103,11 +103,14 @@ function hidepromptTips(that) {
   }, 2000);
 }
 
+
+
+
 module.exports = {
   successShowText: successShowText,
   promptTips: promptTips,
   pageGo: pageGo,
   openShare: openShare,
   showLoading: showLoading,
-  hideLoading: hideLoading
+  hideLoading: hideLoading,
 }

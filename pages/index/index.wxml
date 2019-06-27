@@ -7,12 +7,12 @@
      <view class='list_item_right'>
       <view class='name'>{{item.name}}</view>
       <view class='sex'>
-        <image class='sexImg' src='{{item.sex==1?"/images/boy.png":item.sex==2?"/images/gril.png":"/images/cat_icon.png"}}'></image>
-        <text class='sexName'>{{item.sex==1?'男孩':item.sex==2?'女孩':'未知'}}</text>
+        <image class='sexImg' src='{{item.sex=="男孩"?"/images/boy.png":item.sex=="女孩"?"/images/gril.png":"/images/cat_icon.png"}}'></image>
+        <text class='sexName'>{{item.sex}}</text>
         <text class='age'>{{item.age}}</text>
       </view>
-      <view>
-        <text class='tag' wx:for='{{item.tags}}' wx:for-item="items" style="background:{{items.color}}">{{items.tag}}</text>
+      <view class='tags'>
+        <view class='tag' wx:for='{{item.tags}}' wx:for-item="items" style="background:{{items.color}}">{{items.tag}}</view>
       </view>
       <view class='address'>
         {{item.province}} {{item.city}} {{item.region}} 

@@ -1,18 +1,17 @@
 // pages/details/index.js
-import {
-  get_details
-} from '../../utils/config.js'
+import {get_details} from '../../utils/config.js'
 const API = require('../../utils/api.js')
-const app = getApp()
+const Mapping = require('../../utils/mappingUtil.js')
+
 const detailsData = {
   "nickname": '库里',
-  "age": '3个月',
+  "age": 3,
   "sex": 2,
   "vaccine_status": 1, //0 未定义 1 未免疫 2 已免疫
   "spay_status": 1, //0 未定义 1 未绝育 2 已绝育
   "declaw_status": 1, //0 未定义 1 未驱虫 2 已驱虫
-  "hair": '短毛猫', //猫毛类型
-  "source": '个人救助', //资源 个人救助
+  "hair": 1, //猫毛类型
+  "source": 2, //资源 个人救助
   "province": '上海市',
   "city": '静安区',
   "region": '',
@@ -56,9 +55,13 @@ Page({
     this.setData({
       data: {
         ...detailsData,
-        "vaccine_status": detailsData.vaccine_status == 1 ? "未免疫" : detailsData.vaccine_status == 2 ? "已免疫" : "", //0 未定义 1 未免疫 2 已免疫
-        "spay_status": detailsData.spay_status == 1 ? "未绝育" : detailsData.spay_status == 2 ? "已绝育" : "", //0 未定义 1 未绝育 2 已绝育
-        "declaw_status": detailsData.declaw_status == 1 ? "未驱虫" : detailsData.declaw_status == 2 ? "已驱虫" : "", //0 未定义 1 未驱虫 2 已驱虫
+        age: Mapping.ageMap[detailsData.age],
+        sex: Mapping.sexMap[detailsData.sex],
+        vaccine_status: Mapping.vaccineMap[detailsData.vaccine_status],
+        spay_status: Mapping.spayMap[detailsData.spay_status],
+        declaw_status: Mapping.declawMap[detailsData.declaw_status],
+        hair: Mapping.hairMap[detailsData.hair],
+        source: Mapping.sourceMap[detailsData.source],
         tags: detailsData.tags.map(v => {
           return {
             tag: v,

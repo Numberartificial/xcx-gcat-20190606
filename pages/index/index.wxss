@@ -6,11 +6,10 @@
 
 .list_item{
   display: flex;
-  justify-items: center;
-  justify-content: flex-start;
+  justify-items: baseline;
   padding:40rpx 0;
   margin: 0 auto;
-  border-bottom: 1rpx solid #E9E9E9;
+  border-bottom: 1px solid #E9E9E9;
 }
 
 .cat_img{
@@ -22,29 +21,41 @@
   display: flex;
   flex-direction: column;
   margin-left: 28rpx;
+  height:168rpx;
+  flex: auto;
 }
 
+.list_item_right>view{
+  flex: auto;
+}
 .list_item_right .name{
   color: #282828;
   font-size:36rpx;
   font-family:PingFangSC-Regular;
   font-weight:400;
+  padding-top:-2rpx;
+
 }
 .list_item_right .sex{
   font-size:26rpx;
   color: #B6B6B6;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
 }
 .sexImg{
   width: 20rpx;
   height: 20rpx;
+  vertical-align: middle;
 }
 .sexName{
   flex: none;
   padding-right: 16rpx;
   padding-left: 4rpx;
+}
+
+.list_item_right .tags{
+  display:flex;
+  padding-top:8rpx;
+  padding-bottom:14rpx;
+
 }
 .list_item_right .tag{
   display: inline-block;
@@ -66,5 +77,5 @@
   font-family:PingFangSC-Regular;
   font-weight:400;
   color: #333333;
-  margin-top: 4rpx;
+  padding-top: 4rpx;
 }
