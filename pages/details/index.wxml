@@ -35,14 +35,14 @@
         <view class='nickname'>猫咪故事</view>
         <view class='line'></view>
       </view>
-      <view style='line-height:40rpx'>{{data.story}}</view>
+      <view class='cat_story_content'>{{data.story}}</view>
     </view>
     <view class='cat_story'>
     <view class='cat_title'>
         <view class='nickname'>领养要求</view>
         <view class='line'></view>
       </view>
-      <view wx:for='{{data.adopt_requirements}}' style='line-height:40rpx'>- {{item}}</view>
+      <view class='cat_story_content' wx:for='{{data.adopt_requirements}}'>- {{item}}</view>
     </view>
   </view>
   
@@ -55,7 +55,6 @@
         <view class='modal_close'>
            <image class='closeBtn' catchtap='hideGoCareCat' src='/images/icon_close.png'></image>
          </view>
-       
         <view class='modal_title'>请复制下方微信号添加工作人员领养：</view>
         <view class='modal_content'>
           <image src='/images/ic_share_wechat.png' class='wechat_img'></image>

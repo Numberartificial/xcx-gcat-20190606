@@ -18,61 +18,58 @@
   border-radius:8rpx;
 }
 .list_item_right{
+  margin-left: 32rpx;
+  flex: auto;
   display: flex;
   flex-direction: column;
-  margin-left: 28rpx;
-  flex: auto;
 }
-
-.list_item_right>view{
+.list_item_right .top{
+  height: 52rpx;
   flex: auto;
 }
 .list_item_right .name{
   color: #282828;
-  font-size:36rpx;
+  font-size:40rpx;
   font-family:PingFangSC-Regular;
   font-weight:400;
-  padding-top:-2rpx;
-
+  margin-right: 24rpx;
 }
 .list_item_right .sex{
-  font-size:26rpx;
+  font-size:30rpx;
   color: #B6B6B6;
+  display: inline-block;
 }
 .sexImg{
-  width: 20rpx;
-  height: 20rpx;
-  vertical-align: middle;
+  width: 26rpx;
+  height: 26rpx;
 }
 .sexName{
-  flex: none;
   padding-right: 16rpx;
-  padding-left: 4rpx;
+  padding-left: 8rpx;
 }
 
 .list_item_right .tags{
-  display:flex;
-  align-items: center;
-  height: 40rpx;
-
+  height:72rpx;
+  flex: auto;
 }
 .list_item_right .tag{
   display: inline-block;
   opacity: 0.7;
   color: #fff;
-  height: 30rpx;
-  line-height: 30rpx;
+  height: 34rpx;
+  line-height: 34rpx;
   text-align: center;
   padding:0 16rpx;
-  font-size:20rpx;
+  font-size:24rpx;
   font-family:PingFangSC-Regular;
   font-weight:400;
   border-radius:32rpx;
-  margin-right: 8rpx;
+  margin-right: 12rpx;
 
 }
 .list_item_right .address{
-  font-size:26rpx;
+  flex: auto;
+  font-size:30rpx;
   font-family:PingFangSC-Regular;
   font-weight:400;
   color: #333333;
