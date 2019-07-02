@@ -1,6 +1,25 @@
 <!--index.wxml-->
 <view class="container">
-  <SwiperCom swiperImg='{{headerImgUrls}}' height="{{270}}"></SwiperCom>
+  <!-- <SwiperCom swiperImg='{{headerImgUrls}}' height="{{270}}"></SwiperCom> -->
+
+  <view class='home_banner'>
+    <image class='banner_img' src='/images/banner_1.png'></image>
+    <view class='banner_content'>
+      <view>今日待领养猫咪</view>
+      <view class='cat_num_item'><text class='cat_num'>{{previewData.cat_num}}</text>只</view>
+      
+      <view class='bannner_btn_view'>
+        <image class='bannner_btn' src='/images/banner_button.png'></image>
+        <view class='btn_content'>
+          <text class='bannner_btn_txt'>没找到喜欢的猫，我们帮你找</text>
+          <image class='banner_icon' src='/images/banner_1_icon.png'></image>
+        </view>
+      </view>
+
+      <view>已帮助
+        <text class='person_num'>{{previewData.person_num}}</text> 位用户找到了爱猫</view>
+    </view>
+  </view>
   <view class='page_list'>
     <view class='list_item' wx:for='{{pageList}}' data-id='{{item.id}}' catchtap='goDetail'>
       <image class='cat_img' src='{{item.photos[0]}}'></image>

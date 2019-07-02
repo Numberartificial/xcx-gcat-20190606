@@ -1,7 +1,7 @@
 <!--pages/findCat/index.wxml-->
 <view class='findCat_container bgColor'>
 
-  <Introduction  
+  <!-- <Introduction  
       title='为帮您找到您喜欢的猫咪，我们会：' 
       data='{{findCatInfo}}'
   ></Introduction>
@@ -11,6 +11,10 @@
       bindsubmit='submitWechat'
       binduserinfo='getUserInfo'
       isSubmit='{{isSubmit}}'
-  ></Wechat>
+  ></Wechat> -->
+
+  <AddGroup 
+    wechat_name='{{wechat_name}}' 
+  ></AddGroup>
 
 </view>

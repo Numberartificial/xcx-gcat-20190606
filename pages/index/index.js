@@ -1,6 +1,6 @@
 //index.js
 //获取应用实例
-import { get_gcat_list} from '../../utils/config.js'
+import { get_gcat_list, get_banner_data} from '../../utils/config.js'
 import { pageGo} from '../../utils/util.js'
 const Mapping = require('../../utils/mappingUtil.js')
 Page({
@@ -12,10 +12,22 @@ Page({
         gopage:'/pages/findCat/index'
       }
     ],
-    pageList:[]
+    pageList:[],
+    previewData:{
+      cat_num:0,
+      person_num:0
+    }
   },
   onShow: function () {
     let { pageList, colorList } = this.data
+    get_banner_data().then(res => {
+      if (res.errcode == 0) {
+        this.setData({
+          previewData: res.data
+        })
+      }
+    })
+
     get_gcat_list({ status:1, current_page: 0, page_size:1000}).then(res=>{
       if (res.errcode==0){
         let data = res.data;
@@ -33,10 +45,12 @@ Page({
             }
           })
         this.setData({ pageList }, () => {
-          console.log(pageList, 'pageList===')
+          // console.log(pageList, 'pageList===')
         })
       }
     }) 
+
+   
   },
   goDetail:function(e){
     let id = e.currentTarget.dataset.id

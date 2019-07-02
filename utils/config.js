@@ -23,6 +23,17 @@ const get_gcat_list = (params) => {
   return fetch(url, null, null, 'GET')
   
 }
+
+/**
+ * 获取首页banner数据
+ * @param params
+ */
+const get_banner_data = (params) => {
+  let url = `${API_PATH}/cats/preview/`
+  return fetch(url, null, null, 'GET')
+
+}
+
 /**
  * 获取宠物详情
  * @param params
@@ -59,5 +70,6 @@ module.exports={
   get_gcat_list: get_gcat_list,
   get_details: get_details,
   submit_actions: submit_actions,
-  submit_cats: submit_cats
+  submit_cats: submit_cats,
+  get_banner_data: get_banner_data
 }

@@ -1,5 +1,7 @@
 {
   "usingComponents": {
     "SwiperCom": "../component/SwiperCom/index"
-  }
+  },
+  "navigationBarBackgroundColor": "#A1E9FF",
+  "navigationBarTextStyle": "white"
 }

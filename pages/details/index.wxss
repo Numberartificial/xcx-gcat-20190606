@@ -95,104 +95,11 @@
   color: #282828;
 }
 
-.cat_title {
-  margin-bottom: 20rpx;
-  position: relative;
-  height: 49rpx;
-  line-height: 49rpx;
-}
 
-.cat_title .line{
-  position: absolute;
-  left:4rpx;
-  top:38rpx;
-  height: 8rpx;
-  width:136rpx;
-  background: rgba(60, 203, 155, 0.4);
-}
 
 .cat_story_content{
   line-height: 42rpx;
   padding-left: 10rpx;
 }
-.copyModal{
-  width:580rpx;
-  height:612rpx;
-  font-family:PingFangSC-Regular;
-  font-weight:400;
-  color: #282828;
-  box-shadow:0px 7px 14px 0px rgba(0,0,0,0.14);
-}
 
-.modal_close{
-  text-align: right;
-  padding-top: 21rpx;
-  padding-right: 21rpx;
-}
-.modal_close .closeBtn{
-  width:48rpx;
-  height:48rpx;
-}
-.modal_title{
-  font-size:28rpx;
-  padding-top: 60rpx;
-}
-.modal_content{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 42rpx;
-  padding-bottom: 131rpx;
 
-}
-.modal_content .wechat_img{
-  width: 39rpx;
-  height: 39rpx;
-  vertical-align: middlel;
-  margin-top:12rpx;
-
-}
-
-.modal_content .wechat_num{
-  font-size:36rpx;
-  margin-left: 20rpx;
-}
-
-.copyModal .copy_btn{
-  width:360rpx;
-  height:87rpx;
-  line-height: 87rpx;
-  text-align: center;
-  font-size:32rpx;
-  color: #fff;
-  background:#57D2A9;
-  border-radius:44rpx;
-  margin: 0 auto;
-}
-
-.cat_buttom{
-  width: 100%;
-  background: #fff;
-  height: 150rpx;
-  position: fixed;
-  left: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.careBtn {
-  width: 666rpx;
-  height: 98rpx;
-  line-height: 98rpx;
-  background: #57d2a9;
-  box-shadow: 0 6px 14px 0 #B4DED0;
-  border-radius: 49rpx;
-  font-size: 30rpx;
-  font-family: PingFangSC-Medium;
-  font-weight: 500;
-  color: #fff;
-  text-align: center;
-}
