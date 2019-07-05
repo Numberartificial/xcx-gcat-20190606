@@ -1,0 +1,143 @@
+<!--pages/release/index.wxml-->
+
+<view class="release_view">
+  <image class="release_header" src="/images/release_header.png"></image>
+  <view class="rs_title">
+    {{pageType==0?'基本信息':pageType==1?'领养信息':'领养联系'}}
+  </view>
+  
+  <block wx:if='{{pageType==0}}'>
+    <view class="release_content" hover-class="none" hover-stop-propagation="false">
+      <spanTitle title='猫咪名片'></spanTitle>
+      <view class="business_card" hover-class="none" hover-stop-propagation="false">
+        <view class="row">
+          <text class="label">昵称：</text>
+          <input class="ipt" value="{{parmas.nickname?parmas.nickname:''}}" data-name='nickname' type="text" placeholder="输入猫咪的昵称" placeholder-style="color:#D1D1D1" maxlength="12" bindinput="changeIpt" > </input>
+        </view>
+      
+        <picker class="row" bindchange="bindPickerChange" value="{{status}}" range="{{EditMap.ageMap}}" range-key="{{'name'}}" data-name='age'>
+          <text class="label">年龄：</text>
+          <text class="no_picker" wx:if='{{!parmas.age}}'>请选择</text>
+          <text class="picker" wx:else>{{parmas.age}}</text>
+        </picker>
+
+        <view class="row">
+          <text class="label">性别：</text>
+          <view class="sexMap">
+            <text wx:for='{{EditMap.sexMap}}' wx:key='index' class="edit_tab {{item.select?'active':''}}" data-status='{{item.status}}' data-name='sex' data-map='sexMap' catchtap='selectTab' >{{item.name}}</text> </view>
+        </view>
+
+      </view>
+
+      <spanTitle title='猫咪现状'></spanTitle>
+      <view class="status_card" hover-class="none" hover-stop-propagation="false">
+        <view class="row">
+          <text class="label">绝育：</text>
+          <view class="spayMap">
+            <text wx:for='{{EditMap.spayMap}}' wx:key='index' class="edit_tab {{item.select?'active':''}}" data-status='{{item.status}}' data-name='spay_status' data-map='spayMap' catchtap='selectTab'>{{item.name}}</text>
+          </view>
+        </view>
+
+        <view class="row">
+          <text class="label">疫苗：</text>
+          <view class="vaccineMap">
+            <text wx:for='{{EditMap.vaccineMap}}' wx:key='index' class="edit_tab {{item.select?'active':''}}" data-status='{{item.status}}' data-name='vaccine_status' data-map='vaccineMap' catchtap='selectTab'>{{item.name}}</text>
+          </view>
+        </view>
+
+        <view class="row">
+          <text class="label">驱虫：</text>
+          <view class="declawMap">
+            <text wx:for='{{EditMap.declawMap}}' wx:key='index' class="edit_tab {{item.select?'active':''}}" data-status='{{item.status}}' data-name='declaw_status' data-map='declawMap' catchtap='selectTab'>{{item.name}}</text>
+          </view>
+        </view>
+
+      </view>
+
+      <uploadImages 
+          bindmyevent="uploadPhotos" 
+          count='{{9}}' 
+          detailPics='{{parmas.photos}}'
+          uploadUrl="{{uploadImgUrl}}">
+      </uploadImages>
+
+      <view class="cat_view_buttom">
+        <view class="careBtn {{verifyPage0?'':'grey'}}" data-page='{{1}}' catchtap='nextPage'>下一步</view>
+      </view>
+
+    </view>
+  </block>
+
+  <block wx:if='{{pageType==1}}'>
+    <view class="release_content">
+
+      <spanTitle title='猫咪名片'></spanTitle>
+      <view class="row catFeature">
+        <block wx:for="{{EditMap.catFeature}}" wx:key='index' >
+            <text class="edit_tab_2 {{item.select?'active':''}}" data-tag='{{item.name}}' data-name='tags' data-map='catFeature' catchtap='changeTab'>{{item.name}}</text>
+        </block>
+      </view>
+
+      <spanTitle title='领养要求'></spanTitle>
+      <view class="request_cat">
+        <view class="row request_cat_row">
+          <block wx:for="{{EditMap.adoptRequest}}" wx:key='index'>
+            <text class="edit_tab_2 {{item.select?'active':''}}" data-tag='{{item.name}}' data-name='adopt_requirements'
+              data-map='adoptRequest' catchtap='changeTab'>{{item.name}}</text>
+          </block>
+        </view>
+        <view class="row request_textarea_row">
+          <textarea class="textarea" value="{{parmas.comment?parmas.comment:''}}" placeholder="输入其他领养要求" placeholder-style="color:#D1D1D1" auto-height="true"  maxlength="200" auto-focus data-name='comment' bindinput="changeIpt" > </textarea>
+          <text class="textarea_num">
+            {{parmas.comment?parmas.comment.length:0}}/200
+          </text>
+        </view>
+      </view>
+
+      <spanTitle title='送养背景'></spanTitle>
+      <view class="row feedbg_cat">
+        <textarea class="textarea" value="{{parmas.story?parmas.story:''}}" placeholder="猫咪是捡到的？救助的？还是因为什么原因无法继续养啦都写在这里吧" placeholder-style="color:#D1D1D1" auto-height="true"
+          maxlength="200" auto-focus data-name='story' bindinput="changeIpt"> </textarea>
+        <text class="textarea_num">
+          {{parmas.story?parmas.story.length:0}}/200
+        </text>
+      </view>
+
+      <view class="cat_view_buttom">
+        <view class="careBtn" data-page='{{2}}' catchtap='nextPage'>下一步</view>
+      </view>
+
+    </view>
+  </block>
+
+  <block wx:if='{{pageType==2}}'>
+    <view class="release_content">
+
+      <spanTitle title='联系方式'></spanTitle>
+      <view class="row">
+        <text class="label">微信号：</text>
+        <input class="ipt" value="{{parmas.wechat_id?parmas.wechat_id:''}}" data-name='wechat_id' type="text"
+          placeholder="请输入微信号" placeholder-style="color:#D1D1D1" bindinput="changeIpt"> </input>
+      </view>
+
+      <picker class="row" mode="region" bindchange="bindPickerChange" value="{{[parmas.province,parmas.city,parmas.region]}}" data-name='region'>
+        <text class="label">所在地：</text>
+        <text class="no_picker" wx:if='{{!parmas.province}}'>请选择城市</text>
+        <text class="picker" wx:else>{{parmas.province}} {{parmas.city}} {{parmas.region}}</text>
+      </picker>
+
+
+      <button class='cat_view_buttom' wx:if='{{!hasUserInfo}}' 
+       style="margin-top: 580rpx;" 
+        hover-class="btn-hover" open-type='getUserInfo'
+        bindgetuserinfo='getUserInfo'>
+          <view class="careBtn {{verifyPage2?'':'grey'}}">发布</view>
+      </button>
+
+      <view class="cat_view_buttom" style="margin-top: 280rpx;"  wx:else='{{hasUserInfo}}'>
+        <view class="careBtn {{verifyPage2?'':'grey'}}" catchtap='handleRelease'>发布</view>
+      </view>
+
+    </view>
+  </block>
+</view>

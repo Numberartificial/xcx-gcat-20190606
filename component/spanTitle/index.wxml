@@ -1,0 +1,5 @@
+<!--pages/component/spanTitle/index.wxml-->
+ <view class='cat_title'>
+    <view class='nickname'>{{title}}</view>
+    <view class='line'></view>
+  </view>

@@ -9,6 +9,9 @@
   overflow: auto;
 }
 
+.cat_buttom{
+  background: #fff;
+}
 .row {
   display: flex;
   justify-content: flex-start;
@@ -100,6 +103,10 @@
 .cat_story_content{
   line-height: 42rpx;
   padding-left: 10rpx;
+}
+
+.detail_wrapper .modal_content{
+  padding-top:80rpx;
 }
 
 

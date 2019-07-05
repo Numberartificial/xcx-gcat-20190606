@@ -1,0 +1,9 @@
+<!--pages/option/index.wxml-->
+<view class='option_view'>
+  <view class='modal_title'>添加下方微信号即可发送意见哦～</view>
+  <view class='modal_content'>
+    <image src='/images/ic_share_wechat.png' class='wechat_img'></image>
+    <text class='wechat_num'>{{wechatName}}</text>
+  </view>
+  <button class='copy_btn' catchtap='copyWachat'>复制微信号</button>
+</view>

@@ -1,0 +1,13 @@
+/* pages/option/index.wxss */
+.option_view {
+  width: 100vw;
+  height: 100vh;
+  background: #fff;
+  text-align: center;
+}
+
+
+.option_view .modal_content .wechat_img{
+  width: 66rpx;
+  height: 66rpx;
+}

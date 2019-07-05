@@ -1,9 +1,4 @@
 {
-  "usingComponents": {
-    "Introduction":"../component/Introduction/index",
-    "Wechat": "../component/Wechat/index",
-    "AddGroup": "../component/AddGroup/index"
-
-  },
+  "usingComponents": {},
   "navigationBarTitleText": "找猫"
 }

@@ -1,0 +1,110 @@
+/* pages/release/index.wxss */
+
+.release_view {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.release_header {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 8;
+  width: 750rpx;
+  height: 254rpx;
+
+}
+
+.business_card,
+.status_card {
+  padding-bottom: 43rpx;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+
+.rs_title {
+  position: absolute;
+  left: 40rpx;
+  top: 80rpx;
+  z-index: 9;
+  font-size: 46rpx;
+  font-family: PingFangSC-Medium;
+  font-weight: 500;
+  color: #3ccb9b;
+}
+
+.release_content {
+  position: absolute;
+  left: 0;
+  top: 170rpx;
+  z-index: 10;
+  padding: 0 40rpx;
+  width: 100%;
+  box-sizing: border-box;
+
+}
+
+.release_content .row {
+  display: flex;
+  padding: 18rpx 0;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #282828;
+  font-size: 30rpx;
+}
+
+.label {
+  height: 49rpx;
+  line-height: 49rpx;
+}
+
+.ipt {
+  flex: auto;
+  height: 49rpx;
+  line-height: 49rpx;
+}
+
+.no_picker {
+  color: #D1D1D1;
+}
+
+
+
+.cat_view_buttom {
+  margin-top: 180rpx;
+  margin-bottom: 30rpx;
+}
+
+.catFeature .edit_tab_2:nth-of-type(5n) {
+  margin-right: 0;
+}
+
+
+.catFeature,
+.request_cat {
+  flex-wrap: wrap;
+  margin-top: 30rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.request_cat_row {
+  flex-wrap: wrap;
+}
+
+.request_cat .edit_tab_2 {
+  width: initial;
+  padding: 0 8px;
+}
+
+.request_textarea_row,
+.feedbg_cat {
+  flex-direction: column;
+}
+
+.textarea_num {
+  color: #D1D1D1;
+  display: flex;
+  justify-content: flex-end;
+}

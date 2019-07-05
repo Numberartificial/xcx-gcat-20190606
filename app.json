@@ -3,7 +3,10 @@
     "pages/index/index",
     "pages/details/index",
     "pages/findCat/index",
-    "pages/careCat/index"
+    "pages/mine/index",
+    "pages/release/index",
+    "pages/option/index",
+    "pages/myRelease/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,25 +18,18 @@
   "tabBar": {
     "color": "#B6B6B6",
     "selectedColor": "#3CCB9B",
-    "borderStyle": "black",
     "list": [
       {
         "pagePath": "pages/index/index",
-        "text": "首页",
-        "iconPath": "images/home.png",
-        "selectedIconPath": "images/home_active.png"
-      },
-      {
-        "pagePath": "pages/findCat/index",
         "text": "找猫",
-        "iconPath": "images/find.png",
-        "selectedIconPath": "images/find_active.png"
+        "iconPath": "component/tabbarComponent/icon/find.png",
+        "selectedIconPath": "component/tabbarComponent/icon/find_active.png"
       },
       {
-        "pagePath": "pages/careCat/index",
-        "text": "发布",
-        "iconPath": "images/care.png",
-        "selectedIconPath": "images/care_active.png"
+        "pagePath": "pages/mine/index",
+        "text": "我的",
+        "iconPath": "component/tabbarComponent/icon/me.png",
+        "selectedIconPath": "component/tabbarComponent/icon/me_active.png"
       }
     ]
   }

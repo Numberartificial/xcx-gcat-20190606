@@ -1,5 +1,7 @@
 // pages/details/index.js
 import {get_details} from '../../utils/config.js'
+import { successShowText } from '../../utils/util'
+
 const API = require('../../utils/api.js')
 const Mapping = require('../../utils/mappingUtil.js')
 
@@ -13,7 +15,8 @@ Page({
     colorList: ['#76DAB9', '#F3A0A9', '#F3C192'],
     data: null,
     goCareCat: false,
-    wechatName: API.wechat_name
+    wechatName: API.wechat_name,
+
   },
 
   /**
@@ -34,14 +37,8 @@ Page({
             vaccine_status: Mapping.vaccineMap[detailsData.vaccine_status],
             spay_status: Mapping.spayMap[detailsData.spay_status],
             declaw_status: Mapping.declawMap[detailsData.declaw_status],
-            hair: Mapping.hairMap[detailsData.hair],
             source: Mapping.sourceMap[detailsData.source],
-            photos: detailsData.photos.map(v=>{
-              return {
-                img: v,
-                gopage: null
-              }
-            }),
+            photos: detailsData.photos,
             tags: detailsData.tags.map(v => {
               return {
                 tag: v,
@@ -54,9 +51,6 @@ Page({
         // console.log(this.data.data, 'detailsData===')
       }
     })
-
-    
-    
   },
   //申请领养
   showGoCareCat: function() {
@@ -80,18 +74,10 @@ Page({
       success(res) {
         wx.getClipboardData({
           success(res) {
-            wx.showToast({
-              title: '复制成功',
-              duration: 1000
-            })
-           
+            successShowText('复制成功')
           },
           fail(res) {
-            wx.showToast({
-              title: '复制失败',
-              icon: 'none',
-              duration: 1000
-            })
+            successShowText('复制失败','none')
           },
           complete(res) {
             setTimeout(() => {
@@ -102,6 +88,7 @@ Page({
       }
     })
   },
+ 
   /**
    * 用户点击右上角分享
    */

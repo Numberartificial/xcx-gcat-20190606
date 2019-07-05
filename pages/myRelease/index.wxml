@@ -1,0 +1,70 @@
+<!--pages/myRelease/index.wxml-->
+<view class="my_release_view">
+  <view class="my_release_header">
+    <block wx:for="{{navtabs}}" wx:key="{{item.status}}">
+      <text class="navtab" data-status='{{item.status}}' catchtap='changeNavtabs' >
+        {{item.txt}}
+      </text>
+    </block>
+    <text class="header_line" style="left:{{activeLeft}}"></text>
+  </view>
+
+  <view class="my_release_content">
+
+  <view class="adopt_view" wx:if='{{pageList.length>0}}'>
+    <view class='cat_info' wx:for='{{pageList}}' wx:key='{{item.id}}'>
+
+      <view class="list_item ">
+        <image class='cat_img' src='{{item.photos[0]}}'></image>
+        <view class='list_item_right'>
+          <view class='top'>
+            <text class='name'>{{item.nickname}}</text>
+            <view class='sex'>
+              <image class='sexImg'
+                src='{{item.sex=="男孩"?"/images/boy.png":item.sex=="女孩"?"/images/gril.png":"/images/no_sex.png"}}'></image>
+              <text class='sexName'>{{item.sex}}</text>
+              <text class='age'>{{item.age}}</text>
+            </view>
+          </view>
+          <view class='tags'>
+            <view class='tag' wx:for='{{item.tags}}' wx:for-item="items" style="background:{{items.color}}">{{items.tag}}
+            </view>
+          </view>
+          <view class='address'>
+            {{item.province}} {{item.city}} {{item.region}}
+          </view>
+        </view>
+      </view>
+
+      <view class="cat_bottom_btn">
+        <block wx:if='{{activeTab==1}}'>
+            <view class="small_btn empty_green" data-catid='{{item.id}}' catchtap='handleAdopted'> 领养完成 </view>
+            <view class="small_btn green" data-catid='{{item.id}}' catchtap='goEditAdopt'> 编辑 </view>
+        </block>
+
+        <block wx:if='{{activeTab==2}}'>
+          <view class="small_btn green" data-catid='{{item.id}}' catchtap='handleAdopted'> 重新发布 </view>
+        </block>
+      </view>
+
+    </view>
+
+  </view>
+    
+    
+    <!--  noData -->
+    <view class="noData" wx:else>
+      <view class="noDataBox">
+        <image class="no_cat_img" src="/images/no_cat.png"> </image>
+        <view class="no_cat_txt"> 还没有猫咪哦～ </view>
+      </view>
+    </view>
+    <!--  noData -->
+
+  </view>
+
+  
+
+
+  
+</view>

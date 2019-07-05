@@ -1,20 +1,49 @@
 <!--pages/findCat/index.wxml-->
 <view class='findCat_container bgColor'>
 
-  <!-- <Introduction  
-      title='为帮您找到您喜欢的猫咪，我们会：' 
-      data='{{findCatInfo}}'
-  ></Introduction>
-  <Wechat 
-      hasUserInfo='{{hasUserInfo}}'
-      wechat_name='{{wechat_name}}'
-      bindsubmit='submitWechat'
-      binduserinfo='getUserInfo'
-      isSubmit='{{isSubmit}}'
-  ></Wechat> -->
+  <view class='header'>
+    <image class='header_bg' src='/images/find_cat_header.png'></image>
+    <view class='hader_cont'>
+      <image class='group_img' src='/images/group_title.png'></image>
+      <text class='group_name'>上海猫咪领养群</text>
+    </view>
+  </view>
+  <view class='content'>
+    <view class='content_box'>
+      <view class='cat_title'>
+        <view class='nickname'>领养要求</view>
+        <view class='line'></view>
+      </view>
+      <view class='content_info'>
+        <view class='content_info_row'>
+          <text class='num'>1.</text>
+          <text class='info'>捡到猫的小伙伴可以在群里发领养信息；</text>
+        </view>
+        <view class='content_info_row'>
+          <text class='num'>2.</text>
+          <text class='info'>想领养猫的小伙伴可以关注信息，也可以说自己想领养什么猫（如大橘、三花、玳 瑁等）。</text>
+        </view>
+      </view>
+    </view>
+  </view>
 
-  <AddGroup 
-    wechat_name='{{wechat_name}}' 
-  ></AddGroup>
+
+  <view class='cat_buttom'>
+    <view class='careBtn' catchtap='showGoCareCat'>马上入群</view>
+  </view>
+
+  <view class='modalWrapper' wx:if='{{goCareCat}}'>
+    <view class='modalBox copyModal'>
+      <view class='modal_close'>
+        <image class='closeBtn' catchtap='hideGoCareCat' src='/images/icon_close.png'></image>
+      </view>
+      <view class='modal_title'>请添加以下微信号为好友，拉你进群</view>
+      <view class='modal_content'>
+        <image src='/images/ic_share_wechat.png' class='wechat_img'></image>
+        <text class='wechat_num'>{{wechat_name}}</text>
+      </view>
+      <button class='copy_btn' catchtap='_copyWachat'>复制微信号</button>
+    </view>
+  </view>
 
 </view>

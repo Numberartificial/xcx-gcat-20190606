@@ -1,6 +1,5 @@
 <!--index.wxml-->
 <view class="container">
-  <!-- <SwiperCom swiperImg='{{headerImgUrls}}' height="{{270}}"></SwiperCom> -->
 
   <view class='home_banner'>
     <image class='banner_img' src='/images/banner_1.png'></image>
@@ -8,7 +7,7 @@
       <view>今日待领养猫咪</view>
       <view class='cat_num_item'><text class='cat_num'>{{previewData.cat_num}}</text>只</view>
       
-      <view class='bannner_btn_view'>
+      <view class='bannner_btn_view' catchtap='goFindCat'>
         <image class='bannner_btn' src='/images/banner_button.png'></image>
         <view class='btn_content'>
           <text class='bannner_btn_txt'>没找到喜欢的猫，我们帮你找</text>
@@ -22,12 +21,12 @@
   </view>
   <view class='page_list'>
     <view class='list_item' wx:for='{{pageList}}' data-id='{{item.id}}' catchtap='goDetail'>
-      <image class='cat_img' src='{{item.photos[0]}}'></image>
+      <image class='cat_img' mode='aspectFill' src='{{item.photos[0]}}'></image>
       <view class='list_item_right'>
         <view class='top'>
           <text class='name'>{{item.nickname}}</text>
           <view class='sex'>
-            <image class='sexImg' src='{{item.sex=="男孩"?"/images/boy.png":item.sex=="女孩"?"/images/gril.png":"/images/cat_icon.png"}}'></image>
+            <image class='sexImg' src='{{item.sex=="男孩"?"/images/boy.png":item.sex=="女孩"?"/images/gril.png":"/images/no_sex.png"}}'></image>
             <text class='sexName'>{{item.sex}}</text>
             <text class='age'>{{item.age}}</text>
           </view>
@@ -41,4 +40,7 @@
       </view>
     </view>
   </view>
+
+
+ <tabbar tabbar="{{tabbar}}"></tabbar>
 </view>

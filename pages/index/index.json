@@ -1,7 +1,7 @@
 {
   "usingComponents": {
-    "SwiperCom": "../component/SwiperCom/index"
+   "tabbar": "/component/tabbarComponent/tabbar"
   },
-  "navigationBarBackgroundColor": "#A1E9FF",
+  "navigationBarBackgroundColor": "#84DEFA",
   "navigationBarTextStyle": "white"
 }

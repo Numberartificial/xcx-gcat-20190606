@@ -71,10 +71,10 @@ function openShare(title, path, imageUrl, callback) {
   }
 }
 
-function successShowText(str) {
+function successShowText(str,icon) {
   wx.showToast({
     title: str,
-    icon: 'none'
+    icon: icon ? icon: 'success'
   })
 }
 function showLoading() {
@@ -103,7 +103,18 @@ function hidepromptTips(that) {
   }, 2000);
 }
 
-
+function analyzeStatus(status,array) {
+  array.find(v => v.status == status).select=true
+  return array
+}
+function analyzeName(nameList, array) {
+  array.forEach(item => {
+    nameList.forEach(v=>{
+      v == item.name ? { ...item, select: true } : { ...item, select: false}
+    })
+  });
+  return array
+}
 
 
 module.exports = {
@@ -113,4 +124,6 @@ module.exports = {
   openShare: openShare,
   showLoading: showLoading,
   hideLoading: hideLoading,
+  analyzeStatus: analyzeStatus,
+  analyzeName: analyzeName
 }

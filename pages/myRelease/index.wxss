@@ -1,0 +1,96 @@
+/* pages/myRelease/index.wxss */
+.my_release_view {
+  height: 100vh;
+  overflow: auto;
+}
+
+.my_release_header {
+  box-sizing: border-box;
+  width: 750rpx;
+  height: 88rpx;
+  background: #ffffff;
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #282828;
+  position: relative;
+  display: flex;
+  padding: 0 40rpx;
+  border-bottom: 1px solid #e9e9e9;
+}
+
+.my_release_header .navtab {
+  width: 50%;
+  line-height: 30rpx;
+  text-align: center;
+}
+
+.header_line {
+  width: 88rpx;
+  height: 8rpx;
+  background: #3ccb9b;
+  position: absolute;
+  top: 80rpx;
+  left: 22%;
+  transition: left .3s ease-in;
+}
+
+.my_release_content {
+  height: calc(100% - 88rpx);
+  position: relative;
+  background: #F3F3F3;
+}
+
+.noData {
+  width: 100%;
+  height: 100%;
+}
+
+.noDataBox {
+  position: absolute;
+  left: 50%;
+  top: 36%;
+  transform: translate(-50%, -50%);
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: rgba(182, 182, 182, 1);
+  text-align: center;
+}
+
+.no_cat_img {
+  width: 280rpx;
+  height: 180rpx;
+  margin-bottom: 18rpx;
+}
+
+.adopt_view {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.list_item {
+  background: #ffffff;
+  padding: 38rpx 36rpx;
+  border-bottom: none;
+}
+
+.cat_info {
+  margin-bottom: 16rpx;
+  background: #fff;
+}
+
+.cat_bottom_btn {
+  border-top: 1px solid #e9e9e9;
+  height: 104rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 40rpx;
+
+}
+
+.cat_bottom_btn .green{
+  margin-left: 40rpx;
+}

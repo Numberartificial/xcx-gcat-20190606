@@ -1,8 +1,0 @@
-<!--pages/component/Swiper/index.wxml-->
-<swiper class="swiperHome" style='height:{{height}}rpx' autoplay indicator-dots indicator-color='rgba(255,255,255 .4)' indicator-active-color='#fff'>
-   <block wx:for="{{swiperImg}}">
-    <swiper-item>
-      <image bindtap='_goPage' data-url='{{item.gopage}}' src="{{item.img}}" class="slide-image" mode="widthFix"/>
-    </swiper-item>
-  </block>
-  </swiper>

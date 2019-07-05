@@ -1,0 +1,77 @@
+/* pages/my/index.wxss */
+
+.my_header {
+  position: relative;
+  width: 750rpx;
+  height: 400rpx;
+}
+
+.my_header .header_img {
+  width: 750rpx;
+  height: 400rpx;
+
+}
+
+.my_header .userinfo {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+.my_header .userinfo-avatar {
+  overflow: hidden;
+  display: block;
+  border-radius: 50%;
+  width: 124rpx;
+  height: 124rpx;
+  border: 3px solid #ffffff;
+}
+
+.my_header .userinfo-nickName {
+  font-size: 40rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 16rpx;
+}
+
+.my_content{
+  padding-top: 23rpx;
+}
+
+.content_item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 23rpx 0;
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+  border-bottom: 1px solid #E5E5E5;
+}
+
+.content_item:last-child {
+  border-bottom: none;
+}
+
+.my_icon {
+  width: 36rpx;
+  height: 36rpx;
+  margin-right: 16rpx;
+  vertical-align: middle;
+}
+
+.my_txt {
+  font-size: 30rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+}
+
+.icon_arrow {
+  width: 36rpx;
+  height: 36rpx;
+}

@@ -4,7 +4,7 @@ const api = {
   wechat_name:"grove02",//工作人员微信号
   APP_ID: 'wx4e00368b7d02ab26', //APPID 栗子小助手
   API_PATH: 'https://kuaiping.gemii.cc',//生产
-  // API_PATH:'http://192.168.3.227:8080',//测试
+  // API_PATH:'http://192.168.2.188:8080',//测试
   findCatInfo: [
     {
       index: 1,

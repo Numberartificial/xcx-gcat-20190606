@@ -2,9 +2,11 @@
 //获取应用实例
 import { get_gcat_list, get_banner_data} from '../../utils/config.js'
 import { pageGo} from '../../utils/util.js'
+const app = getApp()
 const Mapping = require('../../utils/mappingUtil.js')
 Page({
   data: {
+    tabbar: {},
     colorList: ['#76DAB9', '#F3A0A9','#F3C192'],
     headerImgUrls:[
       {
@@ -17,6 +19,9 @@ Page({
       cat_num:0,
       person_num:0
     }
+  },
+  onLoad:function(){
+    app.editTabbar();
   },
   onShow: function () {
     let { pageList, colorList } = this.data
@@ -55,6 +60,9 @@ Page({
   goDetail:function(e){
     let id = e.currentTarget.dataset.id
     pageGo(`/pages/details/index?id=${id}`,1)
+  },
+  goFindCat: function () {
+    pageGo(`/pages/findCat/index`, 1)
   },
   /**
    * 用户点击右上角分享

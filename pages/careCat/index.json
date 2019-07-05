@@ -1,8 +1,0 @@
-{
-  "usingComponents": {
-    "Introduction": "../component/Introduction/index",
-    "Wechat": "../component/Wechat/index",
-    "AddGroup": "../component/AddGroup/index"
-  },
-  "navigationBarTitleText": "发布"
-}

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "spanTitle": "/component/spanTitle/index",
+    "uploadImages": "/component/uploadImages/index"
+  },
+  "navigationBarTitleText": "发布"
+}
