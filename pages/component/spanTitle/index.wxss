@@ -1,0 +1,30 @@
+/* pages/component/spanTitle/index.wxss */
+
+/* 有绿色底部的title 查看详情 begin  */
+
+.cat_title {
+  margin-bottom: 20rpx;
+  margin-top: 40rpx;
+  position: relative;
+  height: 49rpx;
+  line-height: 49rpx;
+}
+
+.cat_title .nickname {
+  color: #282828;
+  font-size: 40rpx;
+  font-family: PingFangSC-Regular;
+  font-weight: 400;
+  margin-right: 20rpx;
+}
+
+.cat_title .line {
+  position: absolute;
+  left: 4rpx;
+  top: 38rpx;
+  height: 8rpx;
+  width: 146rpx;
+  background: rgba(60, 203, 155, 0.4);
+}
+
+/* 有绿色底部的title 查看详情 end  */
