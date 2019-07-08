@@ -55,6 +55,14 @@ Page({
       }
     }) 
 
+    let me = this;
+    //获取tab的距离顶部高度
+    const query = wx.createSelectorQuery();
+    query.select('#keeptop').boundingClientRect(function (res) {
+      console.log(res.top)
+      me.data.tabTop = res.top
+    }).exec();
+
    
   },
   goDetail:function(e){
@@ -69,5 +77,23 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  onPageScroll:function(e){
+    let me = this;
+    //tab的吸顶效果
+  console.log(e.scrollTop > me.data.tabTop)
+    if(e.scrollTop>me.data.tabTop){
+        if(me.data.tabFix){
+            return
+        }else{
+            me.setData({
+                tabFix:'Fixed'
+            })
+        }
+    }else{
+        me.setData({
+            tabFix:''
+        })
+    }
+},
 })

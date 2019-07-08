@@ -7,16 +7,19 @@
       <view>今日待领养猫咪</view>
       <view class='cat_num_item'><text class='cat_num'>{{previewData.cat_num}}</text>只</view>
       
-      <view class='bannner_btn_view' catchtap='goFindCat'>
+       <view class='bannner_btn_view {{tabFix}}' id='keeptop'>
         <image class='bannner_btn' src='/images/banner_button.png'></image>
         <view class='btn_content'>
           <text class='bannner_btn_txt'>没找到喜欢的猫，我们帮你找</text>
           <image class='banner_icon' src='/images/banner_1_icon.png'></image>
         </view>
+        
       </view>
 
       <view>已帮助
-        <text class='person_num'>{{previewData.person_num}}</text> 位用户找到了爱猫</view>
+            <text class='person_num'>{{previewData.person_num}}</text> 
+            位用户找到了爱猫
+      </view>
     </view>
   </view>
   <view class='page_list'>

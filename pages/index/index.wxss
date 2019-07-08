@@ -30,9 +30,11 @@
 }
 
 .bannner_btn_view {
-  position: sticky;
+  position: relative;
   margin-top:82rpx;
-  margin-bottom: 12rpx;
+  margin-bottom: 20rpx;
+  padding-top:10rpx;
+  width: 100%;
 }
 
 .btn_content{
@@ -44,9 +46,11 @@
 }
 
 .bannner_btn{
+  margin-left: 30rpx;
    width: 560rpx;
   height: 98rpx;
 }
+
 
 .bannner_btn_txt {
   font-size: 30rpx;
@@ -79,3 +83,14 @@
 .person_num {
   color: #3ccb9b;
 }
+
+
+.Fixed{
+  position: fixed;
+  top: 0;
+  margin-top: 0;
+  left: 200;
+  z-index: 99999;
+  background-color: #84DEFA;
+}
+
